@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_videos",
+  "info": {
+    "singularName": "home-video",
+    "pluralName": "home-videos",
+    "displayName": "Home Video",
+    "description": "Video content for the homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "videoUrl": {
+      "type": "string",
+      "required": false,
+      "placeholder": "https://youtube.com/watch?v=..."
+    },
+    "videoFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "provider": {
+      "type": "enumeration",
+      "enum": ["youtube", "vimeo", "custom", "wistia"],
+      "required": false
+    },
+    "videoId": {
+      "type": "string",
+      "required": false,
+      "description": "Video ID from provider (e.g., YouTube video ID)"
+    },
+    "duration": {
+      "type": "integer",
+      "required": false,
+      "description": "Duration in seconds"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "loop": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "muted": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "section": {
+      "type": "enumeration",
+      "enum": ["hero", "featured", "gallery", "testimonial"],
+      "required": false
+    },
+    "order": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    }
+  }
+}

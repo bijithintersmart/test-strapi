@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_contents",
+  "info": {
+    "singularName": "home-content",
+    "pluralName": "home-contents",
+    "displayName": "Home Content",
+    "description": "General content blocks for the homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["banner", "section", "block", "widget"],
+      "required": true,
+      "default": "section"
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "jsonContent": {
+      "type": "json",
+      "required": false
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "backgroundColor": {
+      "type": "string",
+      "required": false,
+      "placeholder": "#ffffff"
+    },
+    "textColor": {
+      "type": "string",
+      "required": false,
+      "placeholder": "#000000"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": ["full-width", "container", "two-column", "grid"],
+      "required": false,
+      "default": "container"
+    },
+    "metadata": {
+      "type": "json",
+      "required": false
+    },
+    "order": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    }
+  }
+}

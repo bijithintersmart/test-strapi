@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_stats",
+  "info": {
+    "singularName": "about-stat",
+    "pluralName": "about-stats",
+    "displayName": "About Stat",
+    "description": "Statistics and numbers for the about page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "value": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50,
+      "description": "Display value (e.g., '500+', '10M', '99%')"
+    },
+    "numericValue": {
+      "type": "decimal",
+      "required": false,
+      "description": "Actual numeric value for calculations"
+    },
+    "suffix": {
+      "type": "string",
+      "required": false,
+      "maxLength": 20,
+      "description": "Suffix to display (e.g., '+', '%', 'M')"
+    },
+    "prefix": {
+      "type": "string",
+      "required": false,
+      "maxLength": 20,
+      "description": "Prefix to display (e.g., '$', '€')"
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100,
+      "description": "Icon name or emoji"
+    },
+    "order": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "about_teams",
+  "info": {
+    "singularName": "about-team",
+    "pluralName": "about-teams",
+    "displayName": "About Team",
+    "description": "Team members for the about page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "position": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    },
+    "bio": {
+      "type": "text",
+      "required": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    },
+    "email": {
+      "type": "email",
+      "required": false
+    },
+    "phone": {
+      "type": "string",
+      "required": false
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "socialLinks": {
+      "type": "json",
+      "required": false,
+      "description": "Object with social media links (linkedin, twitter, github, etc.)"
+    },
+    "department": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "joinDate": {
+      "type": "date",
+      "required": false
+    },
+    "order": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": false,
+      "default": true
+    }
+  }
+}
