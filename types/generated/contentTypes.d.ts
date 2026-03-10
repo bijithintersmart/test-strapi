@@ -663,6 +663,38 @@ export interface ApiAboutTeamAboutTeam extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    description: 'Blog posts and articles';
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    coverImage: Schema.Attribute.Media<'images'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    isFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    tags: Schema.Attribute.JSON;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeCarouselHomeCarousel
   extends Struct.CollectionTypeSchema {
   collectionName: 'home_carousels';
@@ -1419,6 +1451,7 @@ declare module '@strapi/strapi' {
       'api::about-info.about-info': ApiAboutInfoAboutInfo;
       'api::about-stat.about-stat': ApiAboutStatAboutStat;
       'api::about-team.about-team': ApiAboutTeamAboutTeam;
+      'api::blog.blog': ApiBlogBlog;
       'api::home-carousel.home-carousel': ApiHomeCarouselHomeCarousel;
       'api::home-content.home-content': ApiHomeContentHomeContent;
       'api::home-product-listing.home-product-listing': ApiHomeProductListingHomeProductListing;
