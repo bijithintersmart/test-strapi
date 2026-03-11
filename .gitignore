@@ -69,7 +69,9 @@ $RECYCLE.BIN/
 *.log
 *.sql
 *.sqlite
-*.sqlite3
+# Allow database folder for persistent storage
+database/
+!database/*.sqlite3
 
 
 ############################
